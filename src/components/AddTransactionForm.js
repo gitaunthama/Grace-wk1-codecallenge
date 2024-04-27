@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AddTransactionForm.css";
 
-function AddTransactionForm({ transactions = [], setTransactions }) {
+function AddTransactionForm({ setTransactions }) {
   const [formData, setFormData] = useState({
     date: "",
     description: "",
@@ -17,10 +17,14 @@ function AddTransactionForm({ transactions = [], setTransactions }) {
   function handleSubmit(e) {
     e.preventDefault();
     const newTransaction = {
-      id: String(transactions.length + 1), // Generate unique ID
+      id: String(Date.now()), // Generate unique ID using current timestamp
       ...formData
     };
-    setTransactions([...transactions, newTransaction]); // Update transactions state
+    if (setTransactions) {
+      setTransactions(prevTransactions => [...prevTransactions, newTransaction]); // Update transactions state
+    } else {
+      console.error("setTransactions function is not provided!");
+    }
     alert("Transaction added successfully");
     setFormData({
       date: "",
@@ -38,7 +42,7 @@ function AddTransactionForm({ transactions = [], setTransactions }) {
             value={formData.date}
             onChange={handleChange}
             type="date"
-            name="MM/DD/YYYY"
+            name="date"
           />
           <input
             value={formData.description}
