@@ -1,35 +1,46 @@
 import React, { useState } from "react";
-import "./AddTransactionForm.css";
+import "./AddTransactionForm.css"; 
 
 function AddTransactionForm({ setTransactions }) {
+  // Initialize state for form data using the useState hook
   const [formData, setFormData] = useState({
-    date: "",
-    description: "",
-    category: "",
-    amount: ""
+    date: "", 
+    description: "", 
+    category: "", 
+    amount: "" 
   });
 
+  // Function to handle changes in form input fields
   function handleChange(e) {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: value }); // Update form field in formData thingy
   }
 
+  // Function to handle form submission
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // makes tnewish transaction object with a unique ID (mostly timestamp)) and form data
     const newTransaction = {
       id: String(Date.now()), // Generate unique ID using current timestamp
-      ...formData
+      ...formData // Spread form data
     };
-    setTransactions(prevTransactions => [...prevTransactions, newTransaction]); // Update transactions state by merging with existing transactions
+
+    // Update transactions state by adding the newish transaction with  the existing ones 
+    setTransactions(prevTransactions => [...prevTransactions, newTransaction]);
+
     alert("Transaction added successfully");
+
+    //  clear input fields
     setFormData({
-      date: "",
-      description: "",
+      date: "", 
+      description: "", 
       category: "",
-      amount: ""
+      amount: "" 
     });
   }
 
+  // the form part
   return (
     <div className="segment">
       <form onSubmit={handleSubmit} className="form">

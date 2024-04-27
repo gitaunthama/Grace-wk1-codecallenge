@@ -1,14 +1,27 @@
-import React from "react";
-import Transaction from "./Transaction";
-import "./TransactionList.css";
-function TransactionsList({transactions}) {
-  const list = transactions.map((item)=>{
-    return <Transaction key={item.id} date={item.date} description={item.description} category={item.category} amount={item.amount} />;
-  })
+import React from "react"; 
+import Transaction from "./Transaction"; 
+import "./TransactionList.css"; 
+
+function TransactionsList({ transactions }) {
+  // Map each transaction to a <Transaction> component
+  const list = transactions.map((item) => {
+    return (
+      <Transaction
+        key={item.id} 
+        date={item.date} 
+        description={item.description} 
+        category={item.category} 
+        amount={item.amount} 
+      />
+    );
+  });
+
+  //  table with transaction details
   return (
-    <table className="padded table">
+    <table className="padded table"> 
       <tbody>
         <tr>
+          {/* Table headers */}
           <th>
             <h3 className="table header">Date</h3>
           </th>
@@ -22,11 +35,11 @@ function TransactionsList({transactions}) {
             <h3 className="table  header">Amount</h3>
           </th>
         </tr>
-        {/* render a list of <Transaction> components here */}
+        {/* list of <Transaction> components */}
         {list}
       </tbody>
     </table>
   );
 }
 
-export default TransactionsList;
+export default TransactionsList; // Export TransactionsList component for use in other files

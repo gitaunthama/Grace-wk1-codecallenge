@@ -1,30 +1,37 @@
 import React, { useState } from "react";
 import TransactionsList from "./TransactionsList";
-import Search from "./Search";
-import AddTransactionForm from "./AddTransactionForm";
-import transactions from "./Data";
+import Search from "./Search"; 
+import AddTransactionForm from "./AddTransactionForm"; 
+import transactions from "./Data"; 
 
 function AccountContainer() {
-  const [filteredTransactions, setFilteredTransactions] = useState(transactions); // start filteredTransactions with all transactions
+  // Define state for filtered transactions, starting with all transactions
+  const [filteredTransactions, setFilteredTransactions] = useState(transactions);
 
+  // Function to handle search based on query
   function handleSearch(query) {
+    // If query is empty or not a string, reset filtered transactions to all transactions
     if (typeof query !== 'string' || query === '') {
       setFilteredTransactions(transactions);
       return;
     }
+    // Filter transactions based on the search query
     const filtered = transactions.filter(transaction =>
-      transaction.description.toLowerCase().includes(query.toLowerCase())
-      || transaction.category.toLowerCase().includes(query.toLowerCase()) // Add searching by category
-      || transaction.amount.toString().toLowerCase().includes(query.toLowerCase()) // Add searching by amount
-      || transaction.date.toLowerCase().includes(query.toLowerCase()) // Add searching by date
+      transaction.description.toLowerCase().includes(query.toLowerCase()) || 
+      transaction.category.toLowerCase().includes(query.toLowerCase()) || 
+      transaction.amount.toString().toLowerCase().includes(query.toLowerCase()) ||
+      transaction.date.toLowerCase().includes(query.toLowerCase()) 
     );
-    setFilteredTransactions(filtered);
+    setFilteredTransactions(filtered); // Update filteredTransactions state
   }
 
   return (
     <div>
+      {/* {Search component and pass handleSearch function as props } */}
       <Search handleSearch={handleSearch} />
-      <AddTransactionForm setTransactions={setFilteredTransactions} /> {/* Pass setFilteredTransactions here */}
+      {/* Render the AddTransactionForm component and pass setFilteredTransactions function as props */}
+      <AddTransactionForm setTransactions={setFilteredTransactions} />
+      {/* TransactionsList component and pass the filtered transactions */}
       <TransactionsList transactions={filteredTransactions} />
     </div>
   );
