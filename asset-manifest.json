@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Grace-wk1-codecallenge/static/css/main.eae1f9bf.css",
+    "main.js": "/Grace-wk1-codecallenge/static/js/main.ac05928b.js",
+    "static/js/453.d3943c81.chunk.js": "/Grace-wk1-codecallenge/static/js/453.d3943c81.chunk.js",
+    "index.html": "/Grace-wk1-codecallenge/index.html",
+    "main.eae1f9bf.css.map": "/Grace-wk1-codecallenge/static/css/main.eae1f9bf.css.map",
+    "main.ac05928b.js.map": "/Grace-wk1-codecallenge/static/js/main.ac05928b.js.map",
+    "453.d3943c81.chunk.js.map": "/Grace-wk1-codecallenge/static/js/453.d3943c81.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eae1f9bf.css",
+    "static/js/main.ac05928b.js"
+  ]
+}
