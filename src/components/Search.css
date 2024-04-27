@@ -1,0 +1,34 @@
+.fluid.icon.input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  .fluid.icon.input input {
+    flex: 1;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 16px;
+    
+  }
+  
+  .fluid.icon.input input:focus {
+    outline: none;
+   
+  }
+  
+  .fluid.icon.input .circular.search.link.icon {
+    margin-left: -20px;
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .fluid.icon.input .circular.search.link.icon:hover {
+    color: #0056b3;
+  }
+  i{
+    color:black;
+  }
