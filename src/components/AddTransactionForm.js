@@ -20,11 +20,7 @@ function AddTransactionForm({ setTransactions }) {
       id: String(Date.now()), // Generate unique ID using current timestamp
       ...formData
     };
-    if (setTransactions) {
-      setTransactions(prevTransactions => [...prevTransactions, newTransaction]); // Update transactions state
-    } else {
-      console.error("setTransactions function is not provided!");
-    }
+    setTransactions(prevTransactions => [...prevTransactions, newTransaction]); // Update transactions state by merging with existing transactions
     alert("Transaction added successfully");
     setFormData({
       date: "",
