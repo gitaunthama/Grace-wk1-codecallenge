@@ -20,7 +20,7 @@ function AddTransactionForm({ setTransactions }) {
   function handleSubmit(e) {
     e.preventDefault(); // Prevent default form submission behavior
 
-    // makes tnewish transaction object with a unique ID (mostly timestamp)) and form data
+    // makes newish transaction object with a unique ID (mostly timestamp)) and form data
     const newTransaction = {
       id: String(Date.now()), // Generate unique ID using current timestamp
       ...formData // Spread form data

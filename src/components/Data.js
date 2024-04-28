@@ -2,22 +2,15 @@ const transactions = [
     {
       "id": "1",
       "date": "2019-12-01",
-      "description": "Paycheck from Bob's Burgers",
+      "description": "Paycheck from SpongeBob's Burgers",
       "category": "Income",
       "amount": 1000
     },
     {
-      "id": "2",
-      "date": "2019-12-01",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": 100
-    },
-    {
       "id": "3",
       "date": "2019-12-02",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
+      "description": "Kenya Power",
+      "category": "Electricity",
       "amount": -100
     },
     {
@@ -37,7 +30,7 @@ const transactions = [
     {
       "id": "6",
       "date": "2019-12-06",
-      "description": "Chipotle",
+      "description": "KFC",
       "category": "Food",
       "amount": 17
     },
@@ -45,14 +38,14 @@ const transactions = [
     {
       "id": "7",
       "date": "2019-12-09",
-      "description": "Lyft Ride",
+      "description": "Uber",
       "category": "Transportation",
       "amount": 13
     },
     {
       "id": "8",
       "date": "2019-12-11",
-      "description": "Paycheck from Bob's Burgers",
+      "description": "Paycheck from SpongeBob's Burgers",
       "category": "Income",
       "amount": +1000
     },
